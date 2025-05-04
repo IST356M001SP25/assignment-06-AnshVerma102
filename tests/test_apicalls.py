@@ -13,7 +13,7 @@ def test_should_pass():
 
 def test_get_googe_place_details():
     tests = [ 
-        {'place_id': 'ChIJUTtvv9Tz2YkRhneTbRT-1mk', 'expected_name': 'Buried Acorn Restaurant & Brewery'},
+        {'place_id': 'ChIJUTtvv9Tz2YkRhneTbRT-1mk', 'expected_name': 'Buried Acorn Brewery'},
         { 'place_id': 'ChIJl2h_-pjz2YkR-VUHD9dpOF0', 'expected_name': 'Meier’s Creek Brewing - Inner Harbor'},
     ]
     for t in tests:

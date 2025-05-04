@@ -29,7 +29,6 @@ def get_google_place_details(google_place_id: str) -> dict:
         "google/places/details",
         params={"place_id": google_place_id}
     )
-
 def geocode(place: str) -> dict:
     return _call_api(
         "GET",
