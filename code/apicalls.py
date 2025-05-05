@@ -20,7 +20,15 @@ def _call_api(
     """
     url = f"{BASE_URL}/{path}"
     response = _session.request(method, url, params=params, data=data)
-    response.raise_for_status()
+    try:
+        response.raise_for_status()
+    except requests.exceptions.HTTPError as e:
+        if response.status_code == 403:
+            raise RuntimeError(
+                f"Access forbidden: Ensure the API key is valid and has the necessary permissions. "
+                f"URL: {url}, Params: {params}, Response: {response.text}"
+            ) from e
+        raise
     return response.json()
 
 def get_google_place_details(google_place_id: str) -> dict:
@@ -47,7 +55,7 @@ def get_azure_sentiment(text: str) -> dict:
     return _call_api(
         "POST",
         "azure/sentiment",
-        data={"text": text}
+        data={"documents": [{"id": "1", "language": "en", "text": text}]}
     )
 
 def get_azure_key_phrase_extraction(text: str) -> dict:
