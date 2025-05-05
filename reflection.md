@@ -1,7 +1,7 @@
 # Reflection
 
-Student Name:  name
-Sudent Email:  email
+Student Name:  Ansh Verma
+Sudent Email:  averma11@syr.edu
 
 ## Instructions
 
@@ -22,4 +22,4 @@ Examples:
 **Best Reflection** "I learned when to use while vs for loops. While loops are for sentiel-controlled values (waiting for a condition to occur), vs for loops are for iterating over collections of fixed values."
 
 `--- Reflection Below This Line ---`
-
+I struggled a lot with this assignment. This was a great hands on introduction to ETL pipleines, and how data applications are often broken down into smaller pieces. I had an issue with the nested JSON respones as well, as the API response formats had to be flattened correctly while keeping context. Some tests refused to pass as well, especially on the second half of the assignment, this was most likely due to me misinterpreting the structure of the data and making innapropriate calls. 
